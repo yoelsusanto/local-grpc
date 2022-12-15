@@ -74,7 +74,7 @@ func BenchmarkComplexGRPC(b *testing.B) {
 	b.StartTimer()
 
 	for n := 0; n < b.N; n++ {
-		r, err = c.SimpleProcedure(ctx, &pb.SimpleRequest{
+		r, err = c.HashProcedure(ctx, &pb.SimpleRequest{
 			Text: "hello_world",
 		})
 		if err != nil {
